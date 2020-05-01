@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form class="container" id="calculadora">
+
+            <header id="cabecalho">
+                
+                <input type="text" id="panel" autofocus>
+            </header>
+
+            <main>
+                <section id="corpo">    
+                    <div class="numbers">
+                        <input type="button" class="cleanAll" onclick="restart()" value="AC">
+                        <input type="button" class="cleanOne" onclick="cleanOne()" value="C">
+                        <input type="button" class="op" onclick="buttonOperator(value)" value="%">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="7">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="8">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="9">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="4">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="5">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="6">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="1">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="2">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="3">
+                        <input type="button" class="number" onclick="buttonNumber(value)" value="0">
+                        <input type="button" class="op" onclick="buttonDot(value)" value=".">
+                        <input type="button" class="op" onclick="calculate()" value="=">
+                    </div>
+                    
+                    <div class="operators">
+                        <input type="button" class="op" onclick="buttonOperator(value)" value="÷">
+                        <input type="button" class="op" onclick="buttonOperator(value)" value="x">
+                        <input type="button" class="op" onclick="buttonOperator(value)" value="-">
+                        <input type="button" class="op" onclick="buttonOperator(value)" value="+">
+                    </div>
+                </section>
+            </main>
+        </form>
+        <script src="scripts.js"></script>
+    </body>
+</html>
