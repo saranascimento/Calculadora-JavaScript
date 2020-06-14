@@ -108,39 +108,30 @@ function porc(num1, num2) {
     return num1 * num2 / 100
 }
 
-
+function calculate(simbolo, func) {
+    values = display.innerText.split(simbolo)
+    display.innerText = func(Number(values[0]), Number(values[1]))
+    values = ["","",""]
+}
    
-function calculate() {
+function operation() {
+  
     
     if(display.innerText.includes("+")) { 
-        values = display.innerText.split("+")
-        display.innerText = add(Number(values[0]), Number(values[1]))
-        values = ["","",""]
+        calculate("+", add)
     
     } else if(display.innerText.includes("-")) {
-        values = display.innerText.split("-")
-        display.innerText = sub(Number(values[0]), Number(values[1])) 
-        values = ["","",""]
+        calculate("-", sub)
         
-
     } else if(display.innerText.includes("x")) {
-        values = display.innerText.split("x")
-        display.innerText = mult(Number(values[0]), Number(values[1]))
-        values = ["","",""]
+        calculate("x", mult)
         values[0]= display.innerText
 
     } else if(display.innerText.includes("÷")) {
-        values = display.innerText.split("÷")
-        display.innerText = div(Number(values[0]), Number(values[1]))
-        values = ["","",""]
-        
+        calculate("÷", div)
         
     } else if(display.innerText.includes("%")) {
-        values = display.innerText.split("%")
-        display.innerText = porc(Number(values[0]), Number(values[1]))
-        values = ["","",""]
-        
-        
+        calculate("%", porc)
     } 
     
     return display.innerText
