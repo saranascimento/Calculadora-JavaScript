@@ -1,4 +1,4 @@
-let display = document.querySelector('#panel')
+let display = document.querySelector('#calc')
 const allButtons = document.querySelectorAll('input')
 const resetForm = document.querySelector('#calculadora')
 
@@ -11,39 +11,38 @@ function  cleanOne()  {
             
             subs = values[0].substr(0,values[0].length -1) 
             values[0] = subs 
-            display.value = values[0]
-            ("0limei")
-          return display.value
+            display.innerText = values[0]
+          return display.innerText
 
         } else if(values[0] !== ""  && values[1] !== "" && values[2] == "") {
             subsValues = values[1].substr(0,values[1].length -1) 
-            subsDisplay = display.value.substr(0,display.value.length -1)
+            subsDisplay = display.innerText.substr(0,display.innerText.length -1)
             values[1] = subsValues
-            display.value = subsDisplay 
-            return display.value
+            display.innerText = subsDisplay 
+            return display.innerText
             
         } else if(values[2] && values[1] !== "") {
             subsValues = values[2].substr(0,values[2].length -1) 
-            subsDisplay = display.value.substr(0,display.value.length -1)
+            subsDisplay = display.innerText.substr(0,display.innerText.length -1)
             values[2] = subsValues
-            display.value = subsDisplay 
+            display.innerText = subsDisplay 
         
-        return display.value
+        return display.innerText
 
       }
 
-    return display.value 
+    return display.innerText 
 }
 
 function  buttonDot(num)  {
         
     if(values[0] !== "" && !values[0].includes(".")) {
         values[0] +=num
-        display.value = values[0]
+        display.innerText = values[0]
 
     } else if(values[2] !== "" && !values[2].includes(".")) {
         values[2] =num
-        display.value += values[2]
+        display.innerText += values[2]
     }
     
 }
@@ -52,30 +51,30 @@ function  buttonOperator(num)  {
     
     if(values[0] !== ""  && values[1] === "" && values[1].length <= 1  ) {
         values[1] = num
-        display.value += values[1]
+        display.innerText += values[1]
         
     } else if(values[1] !== "" && values[2] === ""){
-        let subs = display.value.substr(0,display.value.length -1) //substr 2 de tras para frente (-2) e remove o 1 (ultimo) 1º do final
+        let subs = display.innerText.substr(0,display.innerText.length -1) //substr 2 de tras para frente (-2) e remove o 1 (ultimo) 1º do final
        
         values[1] = num
-        display.value = subs
-        display.value += values[1]
+        display.innerText = subs
+        display.innerText += values[1]
     }
 
-    return display.value
+    return display.innerText
 }
 
 function  buttonNumber(num){
     
     if(values[0].length <= 7 && values[1] == "") {
-        display.value = num
-        values[0] += display.value
-        display.value = values[0]
+        display.innerText = num
+        values[0] += display.innerText
+        display.innerText = values[0]
     }
 
     if( values[1] !== "") {
         if(values[2].length <= 7) {
-            display.value += num
+            display.innerText += num
             values[2] += num
         }
     }
@@ -113,43 +112,44 @@ function porc(num1, num2) {
    
 function calculate() {
     
-    if(display.value.includes("+")) { 
-        values = display.value.split("+")
-        display.value = add(Number(values[0]), Number(values[1]))
+    if(display.innerText.includes("+")) { 
+        values = display.innerText.split("+")
+        display.innerText = add(Number(values[0]), Number(values[1]))
         values = ["","",""]
     
-    } else if(display.value.includes("-")) {
-        values = display.value.split("-")
-        display.value = sub(Number(values[0]), Number(values[1])) 
+    } else if(display.innerText.includes("-")) {
+        values = display.innerText.split("-")
+        display.innerText = sub(Number(values[0]), Number(values[1])) 
         values = ["","",""]
         
 
-    } else if(display.value.includes("x")) {
-        values = display.value.split("x")
-        display.value = mult(Number(values[0]), Number(values[1]))
+    } else if(display.innerText.includes("x")) {
+        values = display.innerText.split("x")
+        display.innerText = mult(Number(values[0]), Number(values[1]))
         values = ["","",""]
-        values[0]= display.value
+        values[0]= display.innerText
 
-    } else if(display.value.includes("÷")) {
-        values = display.value.split("÷")
-        display.value = div(Number(values[0]), Number(values[1]))
+    } else if(display.innerText.includes("÷")) {
+        values = display.innerText.split("÷")
+        display.innerText = div(Number(values[0]), Number(values[1]))
         values = ["","",""]
         
         
-    } else if(display.value.includes("%")) {
-        values = display.value.split("%")
-        display.value = porc(Number(values[0]), Number(values[1]))
+    } else if(display.innerText.includes("%")) {
+        values = display.innerText.split("%")
+        display.innerText = porc(Number(values[0]), Number(values[1]))
         values = ["","",""]
         
         
     } 
     
-    return display.value
+    return display.innerText
     
 }
 
 function restart() {
     values = ["","",""]
+    display.innerText = values[0]
     resetForm.reset()
 }
 
