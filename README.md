@@ -7,4 +7,4 @@ Praticar os seus conhecimentos em:
 - **JAVASCRIPT** 
 
 ## Screenshots do Projeto
-![](https://ibb.co/dmS6x6d)
+![](https://i.ibb.co/Hh0Y3YW/calc.png)
