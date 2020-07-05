@@ -1,3 +1,8 @@
-# Calculadora simples com HTML/CSS e JavaScript.
+# Calculadora simples
 
-### Clique [aqui](http://calculadora-sara.surge.sh/) para visualizar o projeto online.
+## Tópicos:
+Praticar os seus conhecimentos em:
+- **HTML5**;
+- **CSS3**;
+- **JAVASCRIPT** 
+
