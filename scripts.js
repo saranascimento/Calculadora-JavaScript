@@ -31,6 +31,8 @@ function  cleanOne()  {
 
       }
 
+      if(values = ["","",""]) display.innerText = 0
+
     return display.innerText 
 }
 
@@ -140,7 +142,7 @@ function operation() {
 
 function restart() {
     values = ["","",""]
-    display.innerText = values[0]
+    display.innerText = 0
     resetForm.reset()
 }
 
